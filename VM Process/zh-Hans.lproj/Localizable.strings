@@ -1,0 +1,18 @@
+/* 
+  Localize.strings
+  VM Process
+
+  Created by 陈震 on 2022/2/3.
+  
+*/
+
+"start vm..." = "正在启动虚拟机...";
+"stop vm..." = "正在关闭虚拟机...";
+"Install" = "安装";
+"Choose APK file" = "选择APK文件";
+"install..." = "安装...";
+
+"Drag APK to install" = "将APK文件拖到这里安装";
+"install finish" = "安装完成，可返回虚拟机查看是否安装成功";
+"Press ESC to exit" = "点击 [ESC] 返回";
+"Install %@" = "安装 %@";

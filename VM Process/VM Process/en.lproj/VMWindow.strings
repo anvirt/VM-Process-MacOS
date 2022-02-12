@@ -1,0 +1,102 @@
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "0QB-wP-1Ju"; */
+"0QB-wP-1Ju.title" = "Window";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "1LH-dk-ykP"; */
+"1LH-dk-ykP.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "2DY-Kx-3GP"; */
+"2DY-Kx-3GP.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "Recent"; ObjectID = "5Lw-RK-DwU"; */
+"5Lw-RK-DwU.title" = "Recent";
+
+/* Class = "NSMenuItem"; title = "Quit VM Process"; ObjectID = "6oG-rr-zRk"; */
+"6oG-rr-zRk.title" = "Quit VM Process";
+
+/* Class = "NSMenuItem"; title = "Lock/Unlock"; ObjectID = "7Ra-NL-DZ8"; */
+"7Ra-NL-DZ8.title" = "Lock/Unlock";
+
+/* Class = "NSMenuItem"; title = "Hide VM Process"; ObjectID = "AfS-xH-Qkf"; */
+"AfS-xH-Qkf.title" = "Hide VM Process";
+
+/* Class = "NSMenuItem"; title = "About VM Process"; ObjectID = "D6Z-41-3rE"; */
+"D6Z-41-3rE.title" = "About VM Process";
+
+/* Class = "NSMenuItem"; title = "Rotate Right"; ObjectID = "EKD-e0-A3x"; */
+"EKD-e0-A3x.title" = "Rotate Right";
+
+/* Class = "NSMenu"; title = "VM"; ObjectID = "Evv-dZ-dae"; */
+"Evv-dZ-dae.title" = "VM";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Home"; ObjectID = "FKy-wL-r0V"; */
+"FKy-wL-r0V.title" = "Home";
+
+/* Class = "NSMenuItem"; title = "Rotate Left"; ObjectID = "ICh-Y4-8dL"; */
+"ICh-Y4-8dL.title" = "Rotate Left";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "MC6-xZ-424"; */
+"MC6-xZ-424.title" = "Close";
+
+/* Class = "NSMenu"; title = "VM Process"; ObjectID = "OE9-xM-HiS"; */
+"OE9-xM-HiS.title" = "VM Process";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "RnT-zu-dg8"; */
+"RnT-zu-dg8.title" = "Minimize";
+
+/* Class = "NSMenuItem"; title = "Back"; ObjectID = "V0H-3k-pH5"; */
+"V0H-3k-pH5.title" = "Back";
+
+/* Class = "NSMenuItem"; title = "VM Process"; ObjectID = "Vrw-P7-oeZ"; */
+"Vrw-P7-oeZ.title" = "VM Process";
+
+/* Class = "NSMenuItem"; title = "Volume Down"; ObjectID = "XQc-2J-Dk3"; */
+"XQc-2J-Dk3.title" = "Volume Down";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "Xqy-HJ-BFd"; */
+"Xqy-HJ-BFd.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "Y0J-Ic-lWu"; */
+"Y0J-Ic-lWu.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "b1m-92-bhW"; */
+"b1m-92-bhW.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "bG3-L2-WAs"; */
+"bG3-L2-WAs.title" = "Help";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "d0e-Xk-jTi"; */
+"d0e-Xk-jTi.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "eNz-gP-rm6"; */
+"eNz-gP-rm6.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "gd2-2R-tpo"; */
+"gd2-2R-tpo.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "VM Process Help"; ObjectID = "iU0-ju-Qej"; */
+"iU0-ju-Qej.title" = "VM Process Help";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "pDx-my-25F"; */
+"pDx-my-25F.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "pIr-S0-iC2"; */
+"pIr-S0-iC2.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "tJ6-1c-Kwi"; */
+"tJ6-1c-Kwi.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Shutdown VM..."; ObjectID = "uH9-Wa-8P4"; */
+"uH9-Wa-8P4.title" = "Shutdown VM";
+
+/* Class = "NSMenuItem"; title = "Install APK..."; ObjectID = "ur0-dV-8lR"; */
+"ur0-dV-8lR.title" = "Install APK...";
+
+/* Class = "NSMenuItem"; title = "VM"; ObjectID = "vGO-dm-wxB"; */
+"vGO-dm-wxB.title" = "VM";
+
+/* Class = "NSMenuItem"; title = "Volume Up"; ObjectID = "x6E-Nm-JB1"; */
+"x6E-Nm-JB1.title" = "Volume Up";

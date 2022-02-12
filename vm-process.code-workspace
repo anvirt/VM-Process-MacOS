@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "core"
+		},
+		{
+			"path": "build"
+		},
+		{
+			"path": "prebuilts"
+		}
+	],
+	"settings": {}
+}

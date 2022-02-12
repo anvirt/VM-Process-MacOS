@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VMWindowController">
+            <connections>
+                <outlet property="drag_and_drop_window" destination="Mfr-6J-pbl" id="W6A-sa-PVW"/>
+                <outlet property="progress_indicator" destination="Xqy-HJ-BFd" id="6CJ-Uw-vNO"/>
+                <outlet property="titlebar" destination="3XT-15-1XC" id="KM5-wj-WzO"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" id="se5-gp-TjO" customClass="VMView">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+                <outlet property="menu" destination="1LH-dk-ykP" id="13z-Es-8lo"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="144"/>
+        </window>
+        <menu title="Main Menu" systemMenu="main" id="1LH-dk-ykP">
+            <items>
+                <menuItem title="VM Process" id="Vrw-P7-oeZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="VM Process" systemMenu="apple" id="OE9-xM-HiS">
+                        <items>
+                            <menuItem title="About VM Process" id="D6Z-41-3rE">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="8w5-JI-KTN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="FUA-2J-TO4"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="Y0J-Ic-lWu"/>
+                            <menuItem isSeparatorItem="YES" id="oqg-qg-NJv"/>
+                            <menuItem title="Services" id="gd2-2R-tpo">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="b1m-92-bhW"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="m0j-Wq-h5O"/>
+                            <menuItem title="Hide VM Process" keyEquivalent="h" id="AfS-xH-Qkf">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="j6a-Yo-j74"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="pDx-my-25F">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="FrU-hw-zms"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="eNz-gP-rm6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="pYZ-sa-1q2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="5RC-ik-h89"/>
+                            <menuItem title="Quit VM Process" keyEquivalent="q" id="6oG-rr-zRk">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="gmW-Fm-NBY"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="VM" id="vGO-dm-wxB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="VM" id="Evv-dZ-dae">
+                        <items>
+                            <menuItem title="Volume Up" keyEquivalent="=" id="x6E-Nm-JB1">
+                                <connections>
+                                    <action selector="volume_up:" target="-2" id="JyD-x7-gpw"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Volume Down" keyEquivalent="-" id="XQc-2J-Dk3">
+                                <connections>
+                                    <action selector="volume_down:" target="-2" id="0Lf-4g-tnm"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="l6g-O2-ZE7"/>
+                            <menuItem title="Back" keyEquivalent="B" id="V0H-3k-pH5">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="forward_key_back:" target="-2" id="360-fh-1Df"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Home" keyEquivalent="H" id="FKy-wL-r0V">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="forward_key_home:" target="-2" id="714-6P-7SM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Recent" keyEquivalent="R" id="5Lw-RK-DwU">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="forward_key_recent:" target="-2" id="Pq6-fp-seH"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="4YW-fp-LUT"/>
+                            <menuItem title="Lock/Unlock" keyEquivalent="l" id="7Ra-NL-DZ8">
+                                <connections>
+                                    <action selector="forward_key_power:" target="-2" id="FwR-aE-oW5"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="g0V-N0-n8k"/>
+                            <menuItem title="Install APK..." keyEquivalent="i" id="ur0-dV-8lR">
+                                <connections>
+                                    <action selector="install_apk:" target="-2" id="7Tr-qQ-anS"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Shutdown VM..." keyEquivalent="P" id="uH9-Wa-8P4">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="shutdown_vm:" target="-2" id="ayP-0y-Vwz"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="tJ6-1c-Kwi">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="0QB-wP-1Ju">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="RnT-zu-dg8">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="QtB-UM-BMC"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="2DY-Kx-3GP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="0hd-RZ-KG2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="rb9-g0-nbt"/>
+                            <menuItem title="Rotate Left" keyEquivalent="" id="ICh-Y4-8dL">
+                                <connections>
+                                    <action selector="rotate_left:" target="-2" id="MdV-mw-D8P"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Rotate Right" keyEquivalent="" id="EKD-e0-A3x">
+                                <connections>
+                                    <action selector="rotate_right:" target="-2" id="pKM-6o-8BM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="8XI-Ec-lu7"/>
+                            <menuItem title="Bring All to Front" id="pIr-S0-iC2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="adP-Qn-OWS"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="8Qc-4w-tOI"/>
+                            <menuItem title="Close" keyEquivalent="w" id="MC6-xZ-424">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="Jv6-sX-oyG"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="bG3-L2-WAs">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="d0e-Xk-jTi">
+                        <items>
+                            <menuItem title="VM Process Help" keyEquivalent="?" id="iU0-ju-Qej">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="YnW-vp-XHr"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="117" y="-125"/>
+        </menu>
+        <customView id="3XT-15-1XC">
+            <rect key="frame" x="0.0" y="0.0" width="54" height="15"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-F0-vq5">
+                    <rect key="frame" x="24" y="0.0" width="15" height="15"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YJk-3P-tDZ" userLabel="install_apk">
+                            <rect key="frame" x="0.0" y="-1" width="15" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="EH6-8W-Obf"/>
+                                <constraint firstAttribute="height" constant="15" id="buZ-p4-tQX"/>
+                            </constraints>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aje-pd-rl8">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="install_apk:" target="-2" id="8Nn-Qi-dTm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="YJk-3P-tDZ" firstAttribute="centerY" secondItem="UI8-F0-vq5" secondAttribute="centerY" id="XTO-BG-MWm"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="UI8-F0-vq5" firstAttribute="centerY" secondItem="3XT-15-1XC" secondAttribute="centerY" id="Oi0-OB-F3L"/>
+                <constraint firstItem="UI8-F0-vq5" firstAttribute="top" secondItem="3XT-15-1XC" secondAttribute="top" id="U5g-Zl-Izo"/>
+                <constraint firstAttribute="bottom" secondItem="UI8-F0-vq5" secondAttribute="bottom" id="hSl-rT-BrX"/>
+                <constraint firstAttribute="trailing" secondItem="UI8-F0-vq5" secondAttribute="trailing" constant="15" id="pC1-9u-lel"/>
+            </constraints>
+            <point key="canvasLocation" x="481" y="-9"/>
+        </customView>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="Xqy-HJ-BFd" customClass="ProgressIndicatorPanel">
+            <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="239" width="240" height="120"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" id="VcD-uL-4Fz">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-Ug-NYj">
+                        <rect key="frame" x="112" y="52" width="16" height="16"/>
+                    </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-qq-4er">
+                        <rect key="frame" x="8" y="27" width="224" height="16"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" id="OzH-Qb-K5q">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="qqU-qq-4er" secondAttribute="trailing" constant="10" id="8Od-CP-SiU"/>
+                    <constraint firstItem="qqU-qq-4er" firstAttribute="centerY" secondItem="VcD-uL-4Fz" secondAttribute="centerY" constant="25" id="9uD-k6-3Ix"/>
+                    <constraint firstItem="qqU-qq-4er" firstAttribute="leading" secondItem="VcD-uL-4Fz" secondAttribute="leading" constant="10" id="IhE-kh-gPl"/>
+                    <constraint firstItem="gmE-Ug-NYj" firstAttribute="centerY" secondItem="VcD-uL-4Fz" secondAttribute="centerY" id="Z9S-D5-p46"/>
+                    <constraint firstItem="gmE-Ug-NYj" firstAttribute="centerX" secondItem="VcD-uL-4Fz" secondAttribute="centerX" id="vYQ-Jc-vnb"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="host" destination="F0z-JX-Cv5" id="D0c-48-eHJ"/>
+                <outlet property="indicator" destination="gmE-Ug-NYj" id="Bv1-Zq-cUI"/>
+                <outlet property="text" destination="qqU-qq-4er" id="lRM-PV-sSh"/>
+            </connections>
+            <point key="canvasLocation" x="649" y="348"/>
+        </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Mfr-6J-pbl" customClass="DragAndDropInstallWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" id="zju-zL-mKH">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView id="ZdB-sc-nSe">
+                        <rect key="frame" x="158" y="87" width="163" height="96"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="J7g-fj-cBZ">
+                                <rect key="frame" x="73" y="40" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                        </subviews>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WEg-Jp-IGE">
+                        <rect key="frame" x="0.0" y="-7" width="489" height="277"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAB-id-6Fi">
+                                <rect key="frame" x="18" y="20" width="453" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="tip" id="nxY-OB-GB7">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWD-bj-oJo">
+                                <rect key="frame" x="18" y="58" width="453" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="tip" id="4ac-Li-HMF">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </customView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="indicator" destination="J7g-fj-cBZ" id="sCc-lY-MWj"/>
+                <outlet property="parent" destination="F0z-JX-Cv5" id="xCe-wi-fxi"/>
+                <outlet property="status" destination="KAB-id-6Fi" id="lVO-dw-YxN"/>
+                <outlet property="tip" destination="cWD-bj-oJo" id="sbS-UK-D79"/>
+            </connections>
+            <point key="canvasLocation" x="-158" y="512"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="15" height="13"/>
+    </resources>
+</document>
