@@ -29,8 +29,6 @@
 
 static int ui_main_loop(anv_emu_agent_t *agt) {
   NSApplication *app = [NSApplication sharedApplication];
-  id<NSApplicationDelegate> delegate = [[AppDelegate alloc] init];
-  app.delegate = delegate;
   [app run];
   return 0;
 }
@@ -40,6 +38,12 @@ int main(int argc, const char * argv[]) {
   setenv("ANDROID_EMULATOR_LAUNCHER_DIR", launcher_dir.UTF8String, 1);
   NSString *resource_dir = [NSBundle mainBundle].resourcePath;
   setenv("ANVIRT_EMU_BUNDLE_DATA_PATH", resource_dir.UTF8String, 1);
+
+  NSApplication *app = [NSApplication sharedApplication];
+  id<NSApplicationDelegate> delegate = [[AppDelegate alloc] init];
+  app.delegate = delegate;
+
   setup_agent(ui_main_loop);
+  NSLog(@"start vm process...");
   return anv_vmproc_main(agent_main, QemuMain);
 }

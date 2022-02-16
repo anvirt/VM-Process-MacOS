@@ -31,9 +31,15 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (instancetype)init {
+  self = [super init];
   self.vm_window_controller = [VMWindowController create];
   [self.vm_window_controller.window makeKeyAndOrderFront:self];
+  return self;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

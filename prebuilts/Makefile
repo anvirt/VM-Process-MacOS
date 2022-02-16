@@ -43,6 +43,7 @@ QEMU_DEPS := \
 	${QEMU_LOCAL}/bin64/resize2fs \
 	${QEMU_LOCAL}/lib/pc-bios/bios-256k.bin \
 	${QEMU_LOCAL}/lib/pc-bios/efi-virtio.rom \
+	${QEMU_LOCAL}/lib/pc-bios/linuxboot_dma.bin \
 	${QEMU_LOCAL}/lib64/libOpenglRender.dylib \
 	${QEMU_LOCAL}/lib64/libemugl_common.dylib \
 	${QEMU_LOCAL}/lib64/libshadertranslator.dylib \
