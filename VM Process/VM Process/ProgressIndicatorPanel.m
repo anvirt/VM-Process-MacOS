@@ -25,6 +25,7 @@
 @property (strong) IBOutlet NSProgressIndicator *indicator;
 @property (strong) IBOutlet NSTextField *text;
 @property (strong) IBOutlet NSWindow *host;
+@property (strong) IBOutlet NSButton *force_quit;
 @end
 
 @implementation ProgressIndicatorPanel
@@ -35,13 +36,25 @@
 }
 
 - (void) showText:(NSString *)text {
+  self.force_quit.hidden = YES;
   self.text.stringValue = text;
+  [self show];
+}
+
+- (void) showStopVM {
+  self.force_quit.hidden = NO;
+  self.text.stringValue = NSLocalizedString(@"stop vm...", nil);
   [self show];
 }
 
 - (void) dismiss {
   [self.indicator stopAnimation:nil];
   [self.host endSheet:self];
+}
+
+- (IBAction) force_quit_vm:(id)sender {
+  NSLog(@"force quit vm!");
+  exit(1);
 }
 
 @end

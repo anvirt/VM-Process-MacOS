@@ -62,8 +62,8 @@
     return;
   }
   isShutting = YES;
-  [self.progress_indicator showText:NSLocalizedString(@"stop vm...", nil)];
   // TODO: confirm
+  [self.progress_indicator showStopVM];
   anv_emu_agent_shutdown(anv_emu_agent_get());
 }
 

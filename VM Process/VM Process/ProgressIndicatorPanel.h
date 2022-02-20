@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ProgressIndicatorPanel : NSWindow
 - (void) show;
 - (void) showText:(NSString *)text;
+- (void) showStopVM;
 - (void) dismiss;
 @end
 
