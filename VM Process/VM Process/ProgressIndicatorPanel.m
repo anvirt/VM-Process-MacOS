@@ -54,7 +54,11 @@
 
 - (IBAction) force_quit_vm:(id)sender {
   NSLog(@"force quit vm!");
+#if 0
   exit(1);
+#else
+  [[NSApplication sharedApplication] replyToApplicationShouldTerminate:YES];
+#endif
 }
 
 @end
