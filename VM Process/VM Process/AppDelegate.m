@@ -39,7 +39,7 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-
+  self.vm_window_controller.window.title = _STR(anv_vmproc_get_name());
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

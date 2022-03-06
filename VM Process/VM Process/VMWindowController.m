@@ -46,7 +46,6 @@
   [super windowDidLoad];
   isShutting = NO;
 
-  self.window.title = _STR(anv_vmproc_get_name());
   set_vm_window((__bridge void *) self.window);
   [self.progress_indicator showText: NSLocalizedString(@"start vm...", nil)];
 
