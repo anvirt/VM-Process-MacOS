@@ -41,6 +41,7 @@ static inline void handle_mouse_event(SkinEventType event_type, SkinMouseButtonT
 
   skin_event->u.mouse.xrel = lx - prev_mouse_x;
   skin_event->u.mouse.yrel = ly - prev_mouse_y;
+  skin_event->u.mouse.display_id = 0;
   prev_mouse_x = lx;
   prev_mouse_y = ly;
 
