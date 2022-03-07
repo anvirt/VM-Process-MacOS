@@ -157,6 +157,7 @@ ANV_VMPROC_API int anv_skin_event_queue(SkinEvent *event) {
 
 ANV_VMPROC_API SkinEvent * anv_skin_event_new(SkinEventType event_type) {
   SkinEvent *event = new SkinEvent;
+  memset(event, 0x0, sizeof(SkinEvent));
   event->type = event_type;
   return event;
 }
