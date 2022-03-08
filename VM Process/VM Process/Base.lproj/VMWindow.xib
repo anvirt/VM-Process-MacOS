@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="VMWindowController">
             <connections>
                 <outlet property="drag_and_drop_window" destination="Mfr-6J-pbl" id="W6A-sa-PVW"/>
+                <outlet property="popover_help" destination="lSt-6v-3fu" id="5Kd-Ad-iDK"/>
                 <outlet property="progress_indicator" destination="Xqy-HJ-BFd" id="6CJ-Uw-vNO"/>
                 <outlet property="titlebar" destination="3XT-15-1XC" id="KM5-wj-WzO"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -20,7 +22,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="se5-gp-TjO" customClass="VMView">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -117,7 +119,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="g0V-N0-n8k"/>
-                            <menuItem title="Install APK..." keyEquivalent="i" id="ur0-dV-8lR">
+                            <menuItem title="Install APK..." hidden="YES" keyEquivalent="i" id="ur0-dV-8lR">
                                 <connections>
                                     <action selector="install_apk:" target="-2" id="7Tr-qQ-anS"/>
                                 </connections>
@@ -189,16 +191,15 @@
             <point key="canvasLocation" x="117" y="-125"/>
         </menu>
         <customView id="3XT-15-1XC">
-            <rect key="frame" x="0.0" y="0.0" width="54" height="15"/>
+            <rect key="frame" x="0.0" y="0.0" width="142" height="20"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-F0-vq5">
-                    <rect key="frame" x="24" y="0.0" width="15" height="15"/>
+                    <rect key="frame" x="127" y="0.0" width="0.0" height="20"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YJk-3P-tDZ" userLabel="install_apk">
-                            <rect key="frame" x="0.0" y="-1" width="15" height="17"/>
+                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YJk-3P-tDZ" userLabel="install_apk">
+                            <rect key="frame" x="0.0" y="2" width="17" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="15" id="EH6-8W-Obf"/>
                                 <constraint firstAttribute="height" constant="15" id="buZ-p4-tQX"/>
                             </constraints>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aje-pd-rl8">
@@ -209,14 +210,27 @@
                                 <action selector="install_apk:" target="-2" id="8Nn-Qi-dTm"/>
                             </connections>
                         </button>
+                        <button hidden="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="noT-8s-lRx">
+                            <rect key="frame" x="-1" y="0.0" width="18" height="19"/>
+                            <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gVk-5d-0IK">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="show_help:" target="-2" id="PNo-4K-0mH"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="noT-8s-lRx" firstAttribute="centerY" secondItem="UI8-F0-vq5" secondAttribute="centerY" id="CqR-RV-ceC"/>
                         <constraint firstItem="YJk-3P-tDZ" firstAttribute="centerY" secondItem="UI8-F0-vq5" secondAttribute="centerY" id="XTO-BG-MWm"/>
                     </constraints>
                     <visibilityPriorities>
                         <integer value="1000"/>
+                        <integer value="1000"/>
                     </visibilityPriorities>
                     <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
@@ -227,13 +241,13 @@
                 <constraint firstAttribute="bottom" secondItem="UI8-F0-vq5" secondAttribute="bottom" id="hSl-rT-BrX"/>
                 <constraint firstAttribute="trailing" secondItem="UI8-F0-vq5" secondAttribute="trailing" constant="15" id="pC1-9u-lel"/>
             </constraints>
-            <point key="canvasLocation" x="481" y="-9"/>
+            <point key="canvasLocation" x="501" y="-10"/>
         </customView>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="Xqy-HJ-BFd" customClass="ProgressIndicatorPanel">
             <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="239" width="240" height="150"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="VcD-uL-4Fz">
                 <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -249,9 +263,8 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXo-TY-hRd">
-                        <rect key="frame" x="72" y="12" width="98" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wXo-TY-hRd">
+                        <rect key="frame" x="71" y="10" width="98" height="32"/>
                         <buttonCell key="cell" type="push" title="Force Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Eee-am-nvL">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -266,6 +279,8 @@
                     <constraint firstItem="qqU-qq-4er" firstAttribute="centerY" secondItem="VcD-uL-4Fz" secondAttribute="centerY" constant="20" id="9uD-k6-3Ix"/>
                     <constraint firstItem="qqU-qq-4er" firstAttribute="leading" secondItem="VcD-uL-4Fz" secondAttribute="leading" constant="10" id="IhE-kh-gPl"/>
                     <constraint firstItem="gmE-Ug-NYj" firstAttribute="centerY" secondItem="VcD-uL-4Fz" secondAttribute="centerY" constant="-10" id="Z9S-D5-p46"/>
+                    <constraint firstItem="wXo-TY-hRd" firstAttribute="top" secondItem="qqU-qq-4er" secondAttribute="bottom" constant="10" id="eQk-GV-UMD"/>
+                    <constraint firstItem="wXo-TY-hRd" firstAttribute="centerX" secondItem="VcD-uL-4Fz" secondAttribute="centerX" id="idP-58-ltV"/>
                     <constraint firstItem="gmE-Ug-NYj" firstAttribute="centerX" secondItem="VcD-uL-4Fz" secondAttribute="centerX" id="vYQ-Jc-vnb"/>
                 </constraints>
             </view>
@@ -281,7 +296,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="283" y="305" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="zju-zL-mKH">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -330,8 +345,76 @@
             </connections>
             <point key="canvasLocation" x="-158" y="512"/>
         </window>
+        <customView id="lJR-kk-pz8" userLabel="Help">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxw-jO-rw2">
+                    <rect key="frame" x="0.0" y="288" width="240" height="32"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="xeq-Np-DHA">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jRW-xp-k2C" userLabel="cmd">
+                                    <rect key="frame" x="10" y="8" width="20" height="18"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="XZ2-v7-dJi">
+                                        <imageReference key="image" image="command" catalog="system" symbolScale="large"/>
+                                    </imageCell>
+                                </imageView>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-br-Gq6" userLabel="plus">
+                                    <rect key="frame" x="40" y="10" width="15" height="13"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="plus" catalog="system" id="2t2-uC-hmG"/>
+                                </imageView>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jof-0U-hrF" userLabel="key">
+                                    <rect key="frame" x="65" y="13" width="13" height="8"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="equal" catalog="system" id="09e-AP-dnK"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="5D9-Xq-hEe"/>
+                                <constraint firstItem="jRW-xp-k2C" firstAttribute="leading" secondItem="xeq-Np-DHA" secondAttribute="leading" constant="10" id="86d-Ey-VrF"/>
+                                <constraint firstItem="jof-0U-hrF" firstAttribute="leading" secondItem="Ce5-br-Gq6" secondAttribute="trailing" constant="10" id="8ZA-rB-Bed"/>
+                                <constraint firstItem="jof-0U-hrF" firstAttribute="centerY" secondItem="xeq-Np-DHA" secondAttribute="centerY" id="SBS-KV-hz4"/>
+                                <constraint firstItem="Ce5-br-Gq6" firstAttribute="centerY" secondItem="xeq-Np-DHA" secondAttribute="centerY" id="amw-us-HRz"/>
+                                <constraint firstItem="Ce5-br-Gq6" firstAttribute="leading" secondItem="jRW-xp-k2C" secondAttribute="trailing" constant="10" id="gQl-eo-BY4"/>
+                                <constraint firstItem="Ce5-br-Gq6" firstAttribute="centerY" secondItem="xeq-Np-DHA" secondAttribute="centerY" id="t0F-zY-UTB"/>
+                                <constraint firstItem="jRW-xp-k2C" firstAttribute="centerY" secondItem="xeq-Np-DHA" secondAttribute="centerY" id="vO3-ag-wtG"/>
+                            </constraints>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="xeq-Np-DHA" firstAttribute="centerX" secondItem="Bxw-jO-rw2" secondAttribute="centerX" id="VmS-gg-Vyg"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bxw-jO-rw2" secondAttribute="trailing" id="0ob-ia-3NP"/>
+                <constraint firstItem="Bxw-jO-rw2" firstAttribute="centerX" secondItem="lJR-kk-pz8" secondAttribute="centerX" id="WJG-Og-GaA"/>
+                <constraint firstItem="Bxw-jO-rw2" firstAttribute="top" secondItem="lJR-kk-pz8" secondAttribute="top" id="nD9-Ph-K4V"/>
+            </constraints>
+            <point key="canvasLocation" x="330.5" y="498.5"/>
+        </customView>
+        <viewController title="help" id="2M6-hJ-fwb" userLabel="Popover View Controller - help">
+            <connections>
+                <outlet property="view" destination="lJR-kk-pz8" id="upG-8C-Icb"/>
+            </connections>
+        </viewController>
+        <popover behavior="semitransient" id="lSt-6v-3fu">
+            <connections>
+                <outlet property="contentViewController" destination="2M6-hJ-fwb" id="iqr-cC-wHd"/>
+            </connections>
+        </popover>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSAddTemplate" width="15" height="13"/>
+        <image name="command" catalog="system" width="20" height="18"/>
+        <image name="equal" catalog="system" width="13" height="8"/>
+        <image name="plus" catalog="system" width="15" height="13"/>
     </resources>
 </document>

@@ -34,6 +34,7 @@
 @property (strong) IBOutlet NSView *titlebar;
 @property (strong) IBOutlet ProgressIndicatorPanel *progress_indicator;
 @property (strong) IBOutlet DragAndDropInstallWindow *drag_and_drop_window;
+@property (strong) IBOutlet NSPopover *popover_help;
 @end
 
 @implementation VMWindowController
@@ -119,6 +120,12 @@
     anv_emu_agent_install(anv_emu_agent_get(), apk_file.UTF8String);
   }];
 #endif
+}
+
+- (IBAction) show_help:(id)sender {
+  NSButton* btn = sender;
+  NSRect rect = [self.popover_help.contentViewController.view bounds];
+  [self.popover_help showRelativeToRect:rect ofView:btn preferredEdge:NSRectEdgeMinY];
 }
 
 - (IBAction) shutdown_vm:(id)sender {
