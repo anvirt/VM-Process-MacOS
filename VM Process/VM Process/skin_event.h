@@ -42,6 +42,7 @@ ANV_VMPROC_API void skin_forward_key_home(void);
 ANV_VMPROC_API void skin_forward_key_back(void);
 ANV_VMPROC_API void skin_forward_key_recent(void);
 ANV_VMPROC_API void skin_forward_key_power(void);
+ANV_VMPROC_API void skin_forward_key_power_long(void);
 
 __END_DECLS
 

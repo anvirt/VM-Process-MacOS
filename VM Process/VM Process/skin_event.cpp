@@ -228,3 +228,9 @@ ANV_VMPROC_API void skin_forward_key_power(void) {
   forward_keyevent(LINUX_KEY_POWER, 1);
   forward_keyevent(LINUX_KEY_POWER, 0);
 }
+
+ANV_VMPROC_API void skin_forward_key_power_long(void) {
+  forward_keyevent(LINUX_KEY_POWER, 1);
+  sleep(3);
+  forward_keyevent(LINUX_KEY_POWER, 0);
+}

@@ -141,6 +141,7 @@ static void agent_install_progress(anv_emu_agent_t *agt, double progress, int do
 }
 
 static void proc_request_close(void) {
+  NSLog(@"[shutdown] recv request, status: %d", gAgentStatus);
   if (gAgentStatus == AgentStatusIdle) {
     [[NSApplication sharedApplication] terminate:nil];
   }

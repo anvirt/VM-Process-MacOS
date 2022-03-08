@@ -57,6 +57,17 @@
 }
 
 - (void) doShutDown {
+#if 1
+  // long press Power button to show action in android
+  {
+    dispatch_queue_t queue = dispatch_queue_create("long-press-powner-button", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+      NSLog(@"[shutdown] start notify...");
+      skin_forward_key_power_long();
+      NSLog(@"[shutdown] done notify");
+    });
+  }
+#else
   if (isShutting) {
     return;
   }
@@ -64,6 +75,7 @@
   // TODO: confirm
   [self.progress_indicator showStopVM];
   anv_emu_agent_shutdown(anv_emu_agent_get());
+#endif
 }
 
 //------------------------------------------------------------------------------------------------------
