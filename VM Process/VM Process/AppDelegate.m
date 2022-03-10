@@ -52,9 +52,16 @@
     return NSTerminateNow;
   }
 
+#if 1
+  // long press Power button to show action in android
+  gAgentStatus = AgentStatusIdle;
+  [self.vm_window_controller doShutDown];
+  return NSTerminateCancel;
+#else
   gAgentStatus = AgentStatusWaitingExit;
   [self.vm_window_controller doShutDown];
   return NSTerminateLater;
+#endif
 }
 
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication *)app {
